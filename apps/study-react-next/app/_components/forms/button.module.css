@@ -1,0 +1,68 @@
+.Button {
+  --font-size: 16;
+  --color-bg-hover: var(--color-primary-dark);
+  --color-bg: var(--color-primary);
+  --color-border: var(--color-primary);
+  --color-fg: var(--color-primary-fg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: calc(44 / var(--font-size) * 1em);
+  padding: calc(9.5 / var(--font-size) * 1em) calc(16 / var(--font-size) * 1em);
+  border: 1px solid var(--color-border-ctrl);
+  border-radius: calc(6 / var(--font-size) * 1em);
+  background-color: var(--color-bg);
+  color: var(--color-fg);
+  font-weight: var(--font-weight-semi-bold);
+  font-size: calc(var(--font-size) / 16 * 1rem);
+
+  @media (hover: hover) {
+    &:hover {
+      background-color: var(--color-bg-hover);
+    }
+  }
+  button:not([disabled])& {
+    cursor: pointer;
+  }
+  &:disabled,
+  &[aria-disabled='true'] {
+    --color-bg-hover: var(--color-ctrl-bg-disabled);
+    --color-bg: var(--color-ctrl-bg-disabled);
+    --color-border: var(--color-ctrl-bg-disabled);
+    --color-fg: var(--color-ctrl-fg-disabled);
+    font-weight: var(--font-weight-normal);
+    pointer-events: none;
+
+    & > :where(*) {
+      opacity: 0.7;
+    }
+  }
+  &.Primary {
+  }
+  &.Secondary {
+    --color-bg-hover: var(--color-secondary);
+    --color-bg: var(--color-secondary-lighter);
+    --color-border: var(--color-secondary-dark);
+    --color-fg: var(--color-secondary-dark);
+  }
+  &.Thin {
+    --font-size: 14;
+  }
+}
+
+.Icon {
+}
+
+.Label {
+  line-height: var(--line-height);
+  text-align: center;
+  overflow-wrap: anywhere;
+
+  &:not(:first-child) {
+    margin-left: calc(10 / var(--font-size) * 1em);
+  }
+  &:not(:last-child) {
+    margin-right: calc(10 / var(--font-size) * 1em);
+  }
+}

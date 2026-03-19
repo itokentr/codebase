@@ -1,0 +1,26 @@
+{
+  "name": "@lib/http",
+  "version": "0.1.0",
+  "private": true,
+  "license": "MIT",
+  "files": [
+    "src/**/*"
+  ],
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "default": "./src/index.ts"
+    }
+  },
+  "scripts": {
+    "check-types": "tsc --noEmit",
+    "lint": "oxlint --type-aware -f unix",
+    "test": "bun test ./test"
+  },
+  "devDependencies": {
+    "@repo/configs": "workspace:^",
+    "@repo/test": "workspace:^",
+    "@types/node": "catalog:"
+  }
+}

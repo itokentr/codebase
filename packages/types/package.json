@@ -1,0 +1,36 @@
+{
+  "name": "@lib/types",
+  "version": "0.1.0",
+  "private": true,
+  "license": "MIT",
+  "files": [
+    "src/**/*"
+  ],
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "default": null
+    },
+    "./app/*": {
+      "types": "./src/app/*/index.ts",
+      "default": "./src/app/*/index.ts"
+    },
+    "./web": {
+      "types": "./src/web/index.ts",
+      "default": null
+    },
+    "./web/*": {
+      "types": "./src/web/*.ts",
+      "default": null
+    },
+    "./web/index": null
+  },
+  "scripts": {
+    "check-types": "tsc --noEmit",
+    "lint": "oxlint --type-aware -f unix"
+  },
+  "devDependencies": {
+    "@repo/configs": "workspace:^"
+  }
+}

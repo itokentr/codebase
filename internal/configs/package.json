@@ -1,0 +1,31 @@
+{
+  "name": "@repo/configs",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "exports": {
+    "./oxlint": {
+      "types": "./oxlint/config.ts",
+      "default": "./oxlint/config.ts"
+    },
+    "./oxlint/*": {
+      "types": "./oxlint/config-*.ts",
+      "default": "./oxlint/config-*.ts"
+    },
+    "./typescript": {
+      "types": "./tsconfig/base.json",
+      "default": "./tsconfig/base.json"
+    },
+    "./typescript/*": {
+      "types": "./tsconfig/*.json",
+      "default": "./tsconfig/*.json"
+    }
+  },
+  "scripts": {
+    "check-types": "tsc --noEmit",
+    "lint": "oxlint --type-aware -f unix"
+  },
+  "devDependencies": {
+    "@types/node": "catalog:"
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "name": "study-react-next",
+  "version": "0.1.0",
+  "private": true,
+  "license": "MIT",
+  "type": "module",
+  "exports": null,
+  "scripts": {
+    "build": "next build",
+    "build-storybook": "storybook build",
+    "check-react": "vite build -c vite.check.config.ts",
+    "check-types": "tsc --noEmit && vite build -c vite.check.config.ts",
+    "clear-next-cache": "rm -rf .next",
+    "dev": "next dev",
+    "start": "next start",
+    "storybook": "storybook dev -p 6006 --no-open --no-version-updates",
+    "typegen": "next typegen"
+  },
+  "devDependencies": {
+    "@base-ui/react": "catalog:",
+    "@chromatic-com/storybook": "catalog:",
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.1",
+    "@mui/icons-material": "^9.3.1",
+    "@mui/material": "^9.3.1",
+    "@mui/x-date-pickers": "^9.12.0",
+    "@storybook/addon-a11y": "catalog:",
+    "@storybook/addon-docs": "catalog:",
+    "@storybook/addon-onboarding": "^10.5.10",
+    "@storybook/addon-vitest": "catalog:",
+    "@storybook/nextjs-vite": "catalog:",
+    "@types/node": "catalog:",
+    "@types/react": "catalog:",
+    "@types/react-dom": "catalog:",
+    "@vitest/browser-playwright": "catalog:",
+    "@vitest/coverage-v8": "catalog:",
+    "babel-plugin-react-compiler": "catalog:",
+    "dayjs": "^1.11.23",
+    "next": "catalog:",
+    "playwright": "catalog:",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "storybook": "catalog:",
+    "typescript": "catalog:",
+    "vite": "catalog:",
+    "vitest": "catalog:"
+  },
+  "ignoreScripts": [
+    "sharp",
+    "unrs-resolver"
+  ],
+  "trustedDependencies": [
+    "sharp",
+    "unrs-resolver"
+  ]
+}

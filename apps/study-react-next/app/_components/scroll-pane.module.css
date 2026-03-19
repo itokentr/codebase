@@ -1,0 +1,39 @@
+.ScrollArea {
+  max-width: inherit;
+  max-height: inherit;
+
+  > .Viewport {
+    max-width: inherit;
+    max-height: inherit;
+    overscroll-behavior: contain;
+
+    > .Content {
+    }
+  }
+  > .Scrollbar {
+    display: flex;
+    justify-content: center;
+    width: 0.25rem;
+    margin: 0.5rem;
+    border-radius: 0.375rem;
+    background-color: gray;
+    /* opacity: 0;
+    transition: opacity var(--transition-enter-std);
+
+    &[data-hovering],
+    &[data-scrolling] {
+      opacity: 1;
+    } */
+    &::before {
+      position: absolute;
+      width: 1.25rem;
+      height: 100%;
+      content: '';
+    }
+    > .Thumb {
+      width: 100%;
+      border-radius: inherit;
+      background-color: silver;
+    }
+  }
+}

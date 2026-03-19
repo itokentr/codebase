@@ -1,0 +1,29 @@
+.Root {
+  box-sizing: content-box;
+  display: flex;
+  align-items: center;
+  min-height: calc(44 / 16 * 1rem);
+  margin-bottom: 24px;
+  padding: 20px 32px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.Heading {
+  flex: 1 1 auto;
+  font-weight: 700;
+  font-size: calc(28 / 16 * 1rem);
+  line-height: var(--line-height);
+}
+
+.HeadingText {
+}
+
+.Nav {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  gap: 10px;
+}
+
+.NavItem {
+}

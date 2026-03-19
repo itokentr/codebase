@@ -1,0 +1,13 @@
+{
+  "extends": ["packages/scaffold/src/packages/dprint/config.json"],
+  "excludes": [
+    ".agents/"
+  ],
+  "plugins": [
+    "node_modules/@dprint/json/plugin.wasm",
+    "node_modules/@dprint/markdown/plugin.wasm",
+    "node_modules/@dprint/typescript/plugin.wasm",
+    "node_modules/dprint-plugin-malva/plugin.wasm",
+    "node_modules/dprint-plugin-markup/plugin.wasm"
+  ]
+}

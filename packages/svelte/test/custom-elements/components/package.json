@@ -1,0 +1,7 @@
+{
+  "description": "the command `svelte-package` will read svelte version defined in this package.json",
+  "type": "module",
+  "dependencies": {
+    "svelte": "catalog:"
+  }
+}

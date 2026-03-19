@@ -1,0 +1,6 @@
+[install]
+linker = "hoisted"
+linkWorkspacePackages = true
+
+[run]
+bun = true

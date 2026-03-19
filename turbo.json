@@ -1,0 +1,25 @@
+{
+  "$schema": "./node_modules/turbo/schema.json",
+  "ui": "tui",
+  "tasks": {
+    "build": {
+      "dependsOn": ["^check", "^build"]
+    },
+    "check-types": {
+      "dependsOn": ["^check-types"]
+    },
+    "check": {
+      "dependsOn": ["^check-types", "^lint", "check-types", "lint"]
+    },
+    "dev": {
+      "cache": false,
+      "persistent": true
+    },
+    "lint": {
+      "dependsOn": ["^lint"]
+    },
+    "test": {
+      "dependsOn": ["^check", "^test"]
+    }
+  }
+}

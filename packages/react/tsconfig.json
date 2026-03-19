@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "extends": "@repo/configs/typescript/react",
+  "compilerOptions": {
+    "rootDir": ".",
+    "types": ["node", "react", "react-dom"]
+  },
+  "include": ["*", "**/*"],
+  "exclude": ["oxlint.config.ts"]
+}

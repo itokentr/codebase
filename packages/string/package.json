@@ -1,0 +1,25 @@
+{
+  "name": "@lib/string",
+  "version": "0.1.0",
+  "private": true,
+  "license": "MIT",
+  "files": [
+    "src/**/*"
+  ],
+  "type": "module",
+  "exports": {
+    "./*": {
+      "types": "./src/*.ts",
+      "default": "./src/*.ts"
+    }
+  },
+  "scripts": {
+    "check-types": "tsc --noEmit",
+    "lint": "oxlint --type-aware -f unix",
+    "test": "bun test ./test"
+  },
+  "devDependencies": {
+    "@repo/configs": "workspace:^",
+    "@repo/test": "workspace:^"
+  }
+}

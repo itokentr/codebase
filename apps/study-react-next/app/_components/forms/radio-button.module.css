@@ -1,0 +1,47 @@
+.RadioButton {
+  width: calc(24 / 16 * 1rem);
+  height: calc(24 / 16 * 1rem);
+  overflow: hidden;
+  border: 1px solid var(--color-ctrl-border);
+  border-radius: calc(2 / 16 * 1rem);
+
+  &[aria-checked='false'] {
+    background-color: transparent;
+  }
+  &[aria-checked='true'] {
+    background-color: var(--color-primary);
+  }
+  &:disabled {
+    background-color: var(--color-ctrl-bg-disabled);
+  }
+}
+
+.Icon {
+  height: 100%;
+  fill: var(--color-ctrl-bg);
+  float: left;
+}
+
+.Indicator {
+  height: calc(13 / 22 * 100%);
+  margin-left: calc(2 / 16 * 1rem);
+  float: left;
+
+  .Checkbox[aria-checked='false'] > & {
+    display: none;
+  }
+  .Checkbox:disabled > & {
+    visibility: hidden;
+  }
+}
+
+.Label {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: calc(12 / 16 * 1em);
+}
+
+.LabelText {
+  min-height: calc(24 / 16 * 1rem);
+  line-height: var(--line-height);
+}

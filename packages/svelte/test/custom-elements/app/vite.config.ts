@@ -1,0 +1,22 @@
+import adapter from '@sveltejs/adapter-static';
+import { sveltekit } from '@sveltejs/kit/vite';
+import { defineConfig } from 'vite';
+
+export default defineConfig({
+  plugins: [
+    sveltekit({
+      adapter: adapter(),
+      compilerOptions: {
+        runes: true,
+      },
+      output: {
+        bundleStrategy: 'single',
+      },
+      typescript: {
+        config(config) {
+          config.include.push('../custom-elements.d.ts');
+        },
+      },
+    }),
+  ],
+});

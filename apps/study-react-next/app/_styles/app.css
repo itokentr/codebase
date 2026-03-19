@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,700&display=block&text=SAKS');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=fallback');
+@import './reset.css';
+@import './var.css';
+@import './global.css';
+
+:root {
+  font-size: 1rem;
+  line-height: 1;
+  view-transition-name: none;
+
+  &::view-transition-old(*) {
+    animation-duration: var(--transition-exit-em-duration);
+    animation-timing-function: var(--transition-exit-em-easing);
+  }
+  &::view-transition-new(*) {
+    animation-duration: var(--transition-enter-em-duration);
+    animation-timing-function: var(--transition-enter-em-easing);
+    animation-delay: var(--transition-exit-em-duration);
+  }
+}
+
+[lang='ja'] {
+  font-style: normal;
+  font-weight: var(--font-weight-normal);
+  font-family: 'Noto Sans JP', sans-serif;
+  font-optical-sizing: auto;
+  word-break: break-all;
+}
+
+[lang='en'] {
+  word-break: auto-phrase;
+}
+
+.ServiceLogo {
+  color: var(--color-text);
+  font-style: normal;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: calc(39 / 16 * 1rem);
+  font-family: Inter, sans-serif;
+  font-kerning: normal;
+  font-optical-sizing: auto;
+  letter-spacing: 0.5em;
+  white-space: nowrap;
+  user-select: none;
+}

@@ -1,0 +1,77 @@
+{
+  "name": "@lib/svelte",
+  "version": "0.1.0",
+  "private": true,
+  "license": "MIT",
+  "files": [
+    "src/**/*"
+  ],
+  "type": "module",
+  "exports": {
+    "./*": {
+      "types": "./src/*/index.ts",
+      "default": "./src/*/index.ts"
+    }
+  },
+  "scripts": {
+    "check-types": "tsc --noEmit",
+    "lint": "oxlint --type-aware -f unix"
+  },
+  "dependencies": {
+    "browserslist-to-esbuild": "^2.1.1"
+  },
+  "devDependencies": {
+    "@lib/types": "workspace:^",
+    "@playwright/test": "catalog:",
+    "@sveltejs/adapter-static": "^3.0.10",
+    "@sveltejs/kit": "catalog:",
+    "@sveltejs/package": "catalog:",
+    "@sveltejs/vite-plugin-svelte": "catalog:",
+    "@types/libnpmexec": "^2.0.4",
+    "@types/node": "catalog:",
+    "bits-ui": "catalog:",
+    "libnpmexec": "^11.0.2",
+    "prettier": "^3.9.6",
+    "svelte": "catalog:",
+    "typescript": "catalog:",
+    "vite": "catalog:"
+  },
+  "peerDependencies": {
+    "@lib/types": "workspace:^",
+    "@sveltejs/kit": "catalog:",
+    "@sveltejs/package": "catalog:",
+    "@sveltejs/vite-plugin-svelte": "catalog:",
+    "@types/node": "catalog:",
+    "bits-ui": "catalog:",
+    "prettier": ">=3.0.0",
+    "svelte": "catalog:",
+    "typescript": "catalog:",
+    "vite": "catalog:"
+  },
+  "peerDependenciesMeta": {
+    "@sveltejs/kit": {
+      "optional": true
+    },
+    "@sveltejs/package": {
+      "optional": true
+    },
+    "@sveltejs/vite-plugin-svelte": {
+      "optional": true
+    },
+    "@types/node": {
+      "optional": true
+    },
+    "bits-ui": {
+      "optional": true
+    },
+    "prettier": {
+      "optional": true
+    },
+    "typescript": {
+      "optional": true
+    },
+    "vite": {
+      "optional": true
+    }
+  }
+}

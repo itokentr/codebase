@@ -1,0 +1,23 @@
+{
+  "name": "@repo/test",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./src/interface.ts",
+      "bun": "./src/bun/test.ts",
+      "node": "./src/node/test.ts"
+    }
+  },
+  "scripts": {
+    "check-types": "tsc --noEmit",
+    "lint": "oxlint --type-aware -f unix",
+    "test": "node --test ./test/node/*.test.ts && bun test ./test/bun"
+  },
+  "devDependencies": {
+    "@repo/configs": "workspace:^",
+    "@types/bun": "catalog:",
+    "@types/node": "catalog:"
+  }
+}

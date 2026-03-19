@@ -1,0 +1,8 @@
+{
+  "recommendations": [
+    "clinyong.vscode-css-modules",
+    "dprint.dprint",
+    "oxc.oxc-vscode",
+    "vitest.explorer"
+  ]
+}

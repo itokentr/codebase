@@ -1,0 +1,9 @@
+.Link {
+  color: var(--color-primary);
+
+  @media (hover: hover) {
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

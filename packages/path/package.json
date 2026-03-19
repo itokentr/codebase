@@ -1,0 +1,35 @@
+{
+  "name": "@lib/path",
+  "version": "0.1.0",
+  "private": true,
+  "license": "MIT",
+  "files": [
+    "src/**/*",
+    "types/**/*"
+  ],
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./src/types.ts",
+      "node": "./src/node.ts",
+      "default": "./src/browser.ts"
+    }
+  },
+  "scripts": {
+    "check-types": "tsc --noEmit",
+    "lint": "oxlint --type-aware -f unix",
+    "test": "bun test ./test"
+  },
+  "dependencies": {
+    "minimatch": "^10.2.6"
+  },
+  "devDependencies": {
+    "@repo/configs": "workspace:^",
+    "@repo/test": "workspace:^",
+    "@types/node": "catalog:",
+    "path-browserify": "^1.0.1"
+  },
+  "optionalDependencies": {
+    "path-browserify": "^1.0.1"
+  }
+}

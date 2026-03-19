@@ -1,0 +1,16 @@
+.Error {
+  display: inline-block;
+  margin-top: calc(4 / 12 * 1em);
+  color: var(--color-warn);
+  font-size: calc(12 / 16 * 1rem);
+  line-height: var(--line-height);
+}
+
+.Label {
+  display: inline-block;
+  font-weight: 700;
+  font-size: calc(14 / 16 * 1rem);
+  line-height: var(--line-height);
+}
+
+.Root {}

@@ -1,0 +1,7 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "extends": ["./tsconfig-dom.json", "@tsconfig/vite-react/tsconfig.json"],
+  "compilerOptions": {
+    "lib": ["dom", "esnext"]
+  }
+}

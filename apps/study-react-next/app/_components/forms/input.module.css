@@ -1,0 +1,26 @@
+.Input {
+  display: inline-block;
+  width: 100%;
+  padding: 0 calc(12 / 16 * 1em);
+  border: 1px solid var(--color-ctrl-border);
+  border-radius: calc(6 / 16 * 1em);
+  background-color: var(--color-ctrl-bg);
+  color: var(--color-ctrl-fg);
+  font-size: 1rem;
+  line-height: calc(38 / 16 * 1em);
+
+  &:focus {
+    border-color: transparent;
+    outline: 1px solid var(--color-ctrl-border-outline);
+  }
+  &:disabled {
+    background-color: var(--color-ctrl-bg-disabled);
+    color: var(--color-ctrl-fg-disabled);
+  }
+  &[aria-invalid='true'] {
+    border-color: transparent;
+    outline: 1px solid var(--color-ctrl-border-warn);
+    background-color: var(--color-ctrl-bg-warn);
+    color: var(--color-ctrl-fg-warn);
+  }
+}

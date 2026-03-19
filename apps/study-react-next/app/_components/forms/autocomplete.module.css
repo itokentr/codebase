@@ -1,0 +1,160 @@
+.Loading {
+  display: flex;
+  justify-content: center;
+  padding: calc(10 / 16 * 1em) 0;
+}
+
+.Options {
+  > .Option {
+    display: block;
+    width: 100%;
+    padding: calc(6 / 16 * 1rem) calc(12 / 16 * 1rem);
+    line-height: var(--line-height);
+
+    &:first-child {
+      padding-top: calc(12 / 16 * 1rem);
+    }
+    &:last-child {
+      padding-bottom: calc(12 / 16 * 1rem);
+    }
+    &:where(:focus-visible) {
+      background-color: var(--color-primary-lighter);
+    }
+    @media (hover: hover) {
+      &:hover {
+        background-color: var(--color-primary-lighter);
+      }
+    }
+  }
+}
+
+.Popup {
+  width: var(--anchor-width); /* base ui */
+  max-height: 200px;
+  overflow: hidden;
+  border-radius: calc(6 / 16 * 1rem);
+  background-color: var(--color-ctrl-bg);
+  box-shadow: var(--shadow-drop);
+}
+
+.PopupContent {
+}
+
+.Root {
+  --height: 24;
+  display: flex;
+  align-items: flex-start;
+  padding: calc(7 / 16 * 1em) calc(4 / 16 * 1em) calc(3 / 16 * 1em)
+    calc(12 / 16 * 1em);
+  overflow: hidden;
+  border: 1px solid var(--color-ctrl-border);
+  border-radius: calc(6 / 16 * 1em);
+  background-color: var(--color-ctrl-bg);
+  font-size: 1rem;
+
+  &:has(:where(:focus-visible)) {
+    border-color: transparent;
+    outline: 1px solid var(--color-primary-light);
+  }
+  > :where(.Clear, .Submit) {
+    display: flex;
+    flex: 0 0 auto;
+    align-items: center;
+    justify-content: center;
+    height: calc(var(--height) / 16 * 1em);
+    color: var(--color-secondary-dark);
+
+    &:where(:focus-visible) {
+      color: var(--color-primary);
+    }
+    @media (hover: hover) {
+      &:hover {
+        color: var(--color-primary);
+      }
+    }
+  }
+  > .Clear {
+    width: calc(30 / 16 * 1em);
+
+    svg {
+      width: calc(12 / 16 * 1em);
+    }
+  }
+  > .Submit {
+    width: calc(32 / 16 * 1em);
+
+    svg {
+      width: calc(10 / 16 * 1em);
+    }
+  }
+  > .Separator {
+    flex: 0 0 auto;
+    align-self: stretch;
+    width: 1px;
+    margin-bottom: calc(4 / 16 * 1em);
+    background-color: var(--color-ctrl-border);
+  }
+}
+
+.SelectedOptions {
+  display: flex;
+  flex: 1 1 auto;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  max-width: calc(100% - calc(63 / 16 * 1rem));
+  line-height: calc(var(--height) / 16 * 1em);
+
+  > .Option {
+    --font_size: 14;
+    display: flex;
+    align-items: center;
+    max-width: 100%;
+    margin: 0 calc(4 / var(--font_size) * 1em) calc(4 / var(--font_size) * 1em)
+      0;
+    padding: calc(1 / var(--font_size) * 1em) calc(6 / var(--font_size) * 1em);
+    overflow: hidden;
+    border-radius: calc(6 / var(--font_size) * 1em);
+    background-color: var(--color-secondary-light);
+    color: var(--color-text);
+    font-size: calc(var(--font_size) / 16 * 1em);
+
+    &:where(:focus-visible) {
+      background-color: var(--color-primary-lighter);
+    }
+    @media (hover: hover) {
+      &:hover {
+        background-color: var(--color-primary-lighter);
+      }
+    }
+    > .Label {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    > .Remove {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      aspect-ratio: 1/1;
+      width: calc(14 / var(--font_size) * 1em);
+      margin-left: calc(6 / var(--font_size) * 1em);
+      color: var(--color-text-light);
+
+      svg {
+        width: calc(12 / var(--font_size) * 1em);
+      }
+    }
+  }
+  > .Input {
+    position: relative;
+    flex: 1 1 auto;
+    min-width: 44px;
+    height: calc(var(--height) / 16 * 1em);
+    margin-bottom: calc(4 / 16 * 1em);
+
+    > .Ctrl {
+      position: absolute;
+      inset: 0;
+    }
+  }
+}

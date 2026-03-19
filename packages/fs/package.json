@@ -1,0 +1,57 @@
+{
+  "name": "@lib/fs",
+  "version": "0.1.0",
+  "private": true,
+  "license": "MIT",
+  "files": [
+    "src/**/*"
+  ],
+  "type": "module",
+  "exports": {
+    "./asset-file": {
+      "types": "./src/asset-file.ts",
+      "default": "./src/asset-file.ts"
+    },
+    "./asset-file/*": {
+      "types": "./src/asset-file/*.ts",
+      "default": "./src/asset-file/*.ts"
+    },
+    "./node": {
+      "types": "./src/node/index.ts",
+      "default": "./src/node/index.ts"
+    },
+    "./node/*": {
+      "types": "./src/node/*.ts",
+      "default": "./src/node/*.ts"
+    },
+    "./node/index": null,
+    "./node/types": null
+  },
+  "scripts": {
+    "check-types": "tsc --noEmit",
+    "lint": "oxlint --type-aware -f unix"
+  },
+  "devDependencies": {
+    "@lib/path": "workspace:^",
+    "@lib/stream": "workspace:^",
+    "@lib/types": "workspace:^",
+    "@repo/configs": "workspace:^",
+    "@repo/test": "workspace:^",
+    "@types/node": "catalog:",
+    "memfs": "^4.68.1"
+  },
+  "peerDependencies": {
+    "@lib/path": "workspace:^",
+    "@lib/stream": "workspace:^",
+    "@lib/types": "workspace:^",
+    "@types/node": "26.2.0"
+  },
+  "peerDependenciesMeta": {
+    "@types/node": {
+      "optional": true
+    }
+  },
+  "optionalDependencies": {
+    "memfs": "^4.68.1"
+  }
+}

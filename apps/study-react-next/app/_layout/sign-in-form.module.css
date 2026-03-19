@@ -1,0 +1,30 @@
+.Form {
+  > :where(*) {
+    margin-bottom: calc(16 / 16 * 1rem);
+
+    &:last-child {
+      margin-top: calc(32 / 16 * 1rem);
+      margin-bottom: unset;
+    }
+  }
+  &:has(:invalid) :is(button[type='submit'], input[type='submit']) {
+  }
+}
+
+.Label {
+  margin-bottom: calc(6 / 16 * 1rem);
+}
+
+.Error {
+  margin-bottom: 0;
+  overflow: hidden;
+  color: var(--color-warn);
+  font-size: calc(16 / 16 * 1rem);
+  line-height: var(--line-height);
+  text-align: center;
+
+  > :where(*) {
+    display: block;
+    padding-bottom: calc(16 / 16 * 1rem);
+  }
+}

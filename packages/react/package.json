@@ -1,0 +1,132 @@
+{
+  "name": "@lib/react",
+  "version": "0.1.0",
+  "private": true,
+  "license": "MIT",
+  "files": [
+    "src/**/*"
+  ],
+  "type": "module",
+  "exports": {
+    "./*": {
+      "types": "./src/*/index.ts",
+      "default": "./src/*/index.ts"
+    },
+    "./base-ui/*": {
+      "types": "./src/base-ui/*/index.ts",
+      "default": "./src/base-ui/*/index.ts"
+    },
+    "./base-ui/form/*": {
+      "types": "./src/base-ui/form/*.tsx",
+      "default": "./src/base-ui/form/*.tsx"
+    },
+    "./client/*": {
+      "types": "./src/client/*/index.ts",
+      "default": "./src/client/*/index.ts"
+    },
+    "./compiler": {
+      "types": "./src/react-compiler/index.ts",
+      "default": "./src/react-compiler/index.ts"
+    },
+    "./next/client/*": {
+      "types": "./src/next/client/*.tsx",
+      "default": "./src/next/client/*.tsx"
+    },
+    "./next/server/*": {
+      "types": "./src/next/server/*.ts",
+      "default": "./src/next/server/*.ts"
+    },
+    "./router/*": {
+      "types": "./src/react-router/*/index.ts",
+      "default": "./src/react-router/*/index.ts"
+    }
+  },
+  "scripts": {
+    "check-react": "vite build -c vite.check.config.ts",
+    "check-types": "tsc --noEmit && vite build -c vite.check.config.ts",
+    "lint": "oxlint --type-aware -f unix",
+    "test": "vitest run -c test/vitest.config.ts"
+  },
+  "dependencies": {
+    "babel-plugin-react-compiler": "catalog:",
+    "chalk": "^6.0.0",
+    "classnames": "^2.5.1",
+    "motion": "^13.1.1",
+    "p-debounce": "^5.1.0",
+    "vite-plugin-babel": "catalog:"
+  },
+  "devDependencies": {
+    "@base-ui/react": "catalog:",
+    "@jest/expect": "catalog:",
+    "@lib/types": "workspace:^",
+    "@react-router/dev": "catalog:",
+    "@react-router/fs-routes": "catalog:",
+    "@react-router/node": "catalog:",
+    "@react-router/serve": "catalog:",
+    "@repo/configs": "workspace:^",
+    "@repo/test": "workspace:^",
+    "@testing-library/dom": "catalog:",
+    "@testing-library/jest-dom": "catalog:",
+    "@testing-library/react": "catalog:",
+    "@testing-library/user-event": "catalog:",
+    "@types/babel__core": "catalog:",
+    "@types/node": "catalog:",
+    "@types/react": "catalog:",
+    "@types/react-dom": "catalog:",
+    "jsdom": "catalog:",
+    "next": "catalog:",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-error-boundary": "catalog:",
+    "react-router": "catalog:",
+    "rolldown": "catalog:",
+    "swr": "^2.5.1",
+    "vite": "catalog:",
+    "vitest": "catalog:"
+  },
+  "peerDependencies": {
+    "@base-ui/react": "catalog:",
+    "@lib/types": "workspace:^",
+    "@react-router/dev": "catalog:",
+    "@react-router/fs-routes": "catalog:",
+    "@react-router/node": "catalog:",
+    "@react-router/serve": "catalog:",
+    "@types/node": "catalog:",
+    "@types/react": "catalog:",
+    "@types/react-dom": "catalog:",
+    "next": "catalog:",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-router": "catalog:",
+    "swr": ">=2.5.1"
+  },
+  "peerDependenciesMeta": {
+    "@base-ui/react": {
+      "optional": true
+    },
+    "@react-router/dev": {
+      "optional": true
+    },
+    "@react-router/fs-routes": {
+      "optional": true
+    },
+    "@react-router/node": {
+      "optional": true
+    },
+    "@react-router/serve": {
+      "optional": true
+    },
+    "@types/node": {
+      "optional": true
+    },
+    "next": {
+      "optional": true
+    },
+    "react-router": {
+      "optional": true
+    },
+    "swr": {
+      "optional": true
+    }
+  }
+}

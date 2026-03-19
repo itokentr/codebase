@@ -1,0 +1,120 @@
+.Root {
+  padding: 0 8px 8px 8px;
+  font-weight: 500;
+  font-size: calc(14 / 16 * 1rem);
+}
+
+.List {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  height: 100%;
+}
+
+.Item {
+  &:last-child {
+    margin-top: auto;
+  }
+}
+
+.Link {
+  --bgcolor-active: var(--color-secondary-light);
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 6px;
+  cursor: pointer;
+
+  a&:global(.semi-active:not(.active-only)),
+  a&:global(.active),
+  button&[data-popup-open] {
+    background-color: var(--bgcolor-active);
+  }
+  @media (hover: hover) {
+    &:hover {
+      background-color: var(--bgcolor-active);
+    }
+  }
+  &:focus-visible {
+    background-color: var(--bgcolor-active);
+  }
+}
+
+.Label {
+  display: flex;
+  align-items: center;
+  line-height: 48px;
+}
+
+.LabelIcon {
+  flex: 0 0 48px;
+}
+
+.LabelText {
+  flex: 1 1 auto;
+  overflow: hidden;
+  white-space: nowrap;
+  user-select: none;
+}
+
+.Positioner {
+  z-index: 1;
+  margin-left: 8px;
+}
+
+.Submenu {
+  --transition-props: transform, opacity;
+  --transition-scale: 0.92;
+  position: relative;
+  min-width: 176px;
+  padding: 8px;
+  transform-origin: var(--transform-origin); /* from base ui */
+  background-color: white;
+  box-shadow: var(--shadow-drop);
+  color: var(--color-secondary-dark);
+  font-weight: 500;
+  font-size: calc(14 / 16 * 1rem);
+  clip-path: rect(-8px calc(100% + 8px) calc(100% + 8px) 0);
+  transition: var(--transition-enter-std);
+  transition-property: var(--transition-props);
+
+  &[data-starting-style],
+  &[data-ending-style] {
+    transform: scaleX(var(--transition-scale));
+    opacity: 0;
+
+    .SubmenuItem {
+      transform: scaleX(calc(1 / var(--transition-scale)));
+    }
+  }
+  &[data-ending-style] {
+    transition: var(--transition-exit-std);
+    transition-property: var(--transition-props);
+  }
+}
+
+.SubmenuItem {
+  transition: inherit;
+}
+
+.SubmenuItemLink {
+  display: block;
+  padding: 0 12px;
+  border-radius: 6px;
+  line-height: 37px;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background-color var(--transition-exit-std);
+  user-select: none;
+
+  @media (hover: hover) {
+    &:hover {
+      background-color: var(--color-secondary-light);
+      transition: background-color var(--transition-enter-std);
+    }
+  }
+  &:focus-visible {
+    background-color: var(--color-secondary-light);
+    transition: background-color var(--transition-enter-std);
+  }
+}

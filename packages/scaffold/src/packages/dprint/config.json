@@ -1,0 +1,33 @@
+{
+  "lineWidth": 80,
+  "malva": {
+    "declarationOrder": "smacss",
+    "quotes": "alwaysSingle",
+    "trailingComma": true
+  },
+  "markup": {
+    "associations": [
+      "**/*.html",
+      "**/*.svelte",
+      "**/*.svg",
+      "**/*.vue",
+      "**/*.xhtml"
+    ],
+    "closingBracketSameLine": true,
+    "component.selfClosing": false,
+    "svelte.scriptIndent": true,
+    "svelte.styleIndent": true,
+    "vue.scriptIndent": true,
+    "vue.styleIndent": true
+  },
+  "newLineKind": "auto",
+  "typescript": {
+    "bracePosition": "sameLine",
+    "exportDeclaration.sortNamedExports": "caseSensitive",
+    "exportDeclaration.sortTypeOnlyExports": "first",
+    "importDeclaration.sortNamedImports": "caseSensitive",
+    "importDeclaration.sortTypeOnlyImports": "first",
+    "quoteStyle": "alwaysSingle",
+    "useBraces": "maintain"
+  }
+}

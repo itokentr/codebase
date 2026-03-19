@@ -1,0 +1,40 @@
+{
+  "name": "@lib/assert",
+  "version": "0.1.0",
+  "private": true,
+  "license": "MIT",
+  "files": [
+    "src/**/*"
+  ],
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./src/assert/types.ts",
+      "node": "./src/assert/node.ts",
+      "default": "./src/assert/browser.ts"
+    },
+    "./expect": {
+      "types": "./src/expect/types.ts",
+      "bun": "./src/expect/bun.ts",
+      "default": "./src/expect/browser.ts"
+    }
+  },
+  "scripts": {
+    "check-types": "tsc --noEmit",
+    "lint": "oxlint --type-aware -f unix",
+    "test": "bun test ./test"
+  },
+  "devDependencies": {
+    "@jest/expect": "30.4.1",
+    "@repo/configs": "workspace:^",
+    "@repo/test": "workspace:^",
+    "@types/bun": "catalog:",
+    "@types/chai": "^5.2.3",
+    "@types/node": "catalog:",
+    "chai": "^6.2.2"
+  },
+  "optionalDependencies": {
+    "@jest/expect": "30.4.1",
+    "chai": "^6.2.2"
+  }
+}

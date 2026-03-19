@@ -1,0 +1,75 @@
+.Header {
+  --transition-props: width;
+  display: grid;
+  grid-template:
+    'logo expander shadow' max-content
+    'nav nav shadow' 1fr
+    / 1fr max-content 0;
+  width: var(--width-header);
+  background-color: var(--color-header-bg);
+  color: var(--color-secondary-dark);
+  transition: var(--transition-enter-std);
+  transition-property: var(--transition-props);
+
+  &[data-expanded='false'] {
+    --width-header: 64px;
+    transition: var(--transition-exit-std);
+    transition-property: var(--transition-props);
+
+    .Expander {
+      width: var(--width-header);
+      margin-right: 0;
+    }
+    .ExpanderIcon {
+      transform: scaleX(-1);
+    }
+  }
+  &::after {
+    z-index: 2;
+    position: relative;
+    grid-area: shadow;
+    width: 8px;
+    background-image: linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.1),
+      rgba(0, 0, 0, 0)
+    );
+    content: '';
+  }
+}
+
+.Logo {
+  composes: ServiceLogo from global;
+  grid-area: logo;
+  align-self: stretch;
+  margin-top: 25px;
+  overflow: hidden;
+}
+
+.LogoText {
+  padding-left: 22px;
+}
+
+.Navigation {
+  grid-area: nav;
+  margin-top: 40px;
+  transition: inherit;
+  transition-property: none;
+}
+
+.Expander {
+  display: flex;
+  grid-area: expander;
+  align-items: center;
+  align-self: stretch;
+  justify-content: center;
+  width: 32px;
+  margin-top: 25px;
+  margin-right: 8px;
+  cursor: pointer;
+  transition: inherit;
+  transition-property: width, margin-right;
+}
+
+.ExpanderIcon {
+}
