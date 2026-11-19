@@ -1,0 +1,14 @@
+{
+  "type": "module",
+  "imports": {
+    "#lib": "./src/lib/index.js",
+    "#lib/*": "./src/lib/*"
+  },
+  "dependencies": {
+    "svelte": "*"
+  },
+  "devDependencies": {
+    "@sveltejs/kit": "*",
+    "@sveltejs/vite-plugin-svelte": "*"
+  }
+}

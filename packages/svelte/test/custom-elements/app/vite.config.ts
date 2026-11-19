@@ -6,17 +6,8 @@ export default defineConfig({
   plugins: [
     sveltekit({
       adapter: adapter(),
-      compilerOptions: {
-        runes: true,
-      },
-      output: {
-        bundleStrategy: 'single',
-      },
-      typescript: {
-        config(config) {
-          config.include.push('../custom-elements.d.ts');
-        },
-      },
+      compilerOptions: { runes: true },
+      output: { bundleStrategy: 'single' },
     }),
   ],
 });

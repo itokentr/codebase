@@ -1,4 +1,4 @@
-import type { Config } from '@sveltejs/kit';
+import type { Config } from '@sveltejs/kit/vite';
 import { sveltekit } from '@sveltejs/kit/vite';
 import { svelte } from '@sveltejs/vite-plugin-svelte';
 import browserslist from 'browserslist-to-esbuild';

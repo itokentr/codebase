@@ -1,7 +1,16 @@
 {
   "description": "the command `svelte-package` will read svelte version defined in this package.json",
   "type": "module",
+  "imports": {
+    "#lib": "./src/lib/index.js",
+    "#lib/*": "./src/lib/*"
+  },
   "dependencies": {
-    "svelte": "catalog:"
+    "svelte": "*"
+  },
+  "devDependencies": {
+    "@sveltejs/kit": "*",
+    "@sveltejs/package": "*",
+    "@sveltejs/vite-plugin-svelte": "*"
   }
 }
